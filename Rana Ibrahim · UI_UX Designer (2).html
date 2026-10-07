@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rana Ibrahim · UI/UX Designer</title>
+<meta name="description" content="Rana Ibrahim, UI/UX Designer. IT Engineering student focused on UI/UX and product design.">
+<style>
+:root{
+  --bg:#f4f3ea; --surface:#fbfaf4; --text:#1c1c14; --muted:#6c6c5c; --line:#dedcc6;
+  --accent:#6b6a31; --accent-ink:#fbfaf0; --accent-soft:#e7e6c9;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13130d; --surface:#1c1c13; --text:#f1f0e4; --muted:#a1a18c; --line:#2c2c1f;
+    --accent:#b3b25f; --accent-ink:#14140a; --accent-soft:#2a2a15;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13130d; --surface:#1c1c13; --text:#f1f0e4; --muted:#a1a18c; --line:#2c2c1f;
+  --accent:#b3b25f; --accent-ink:#14140a; --accent-soft:#2a2a15;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100%;background:var(--bg);color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  display:flex;align-items:center;justify-content:center;
+}
+main{
+  width:100%;max-width:440px;padding:40px 24px 32px;
+  display:flex;flex-direction:column;
+}
+.eyebrow{
+  display:flex;align-items:center;gap:10px;margin:0 0 28px;
+  font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.eyebrow i{width:10px;height:10px;border-radius:50%;background:var(--accent);display:block}
+h1{
+  margin:0;font-size:clamp(44px,13vw,60px);line-height:.98;font-weight:750;letter-spacing:-.035em;
+}
+.role{margin:14px 0 0;font-size:clamp(22px,6vw,26px);font-weight:600;letter-spacing:-.015em;color:var(--accent)}
+.meta{
+  margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:2px 0;
+  font-size:14px;line-height:1.5;color:var(--muted);
+}
+.meta li:not(:last-child)::after{content:"·";margin:0 8px;color:var(--line);font-weight:700}
+.quote{
+  margin:22px 0 0;padding-left:16px;border-left:2px solid var(--accent);
+  font-size:17px;line-height:1.5;color:var(--text);
+}
+.links{display:flex;flex-direction:column;gap:12px;margin-top:36px}
+.btn{
+  display:flex;align-items:center;gap:14px;min-height:60px;padding:0 20px;
+  border-radius:16px;text-decoration:none;font-size:17px;font-weight:600;letter-spacing:-.005em;
+  color:var(--text);background:var(--surface);border:1px solid var(--line);
+  transition:transform .15s ease,box-shadow .2s ease,border-color .2s ease,background-color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn span{flex:1}
+.btn .arrow{width:18px;height:18px;opacity:.55;transition:transform .2s ease,opacity .2s ease}
+.btn:hover{border-color:var(--accent);box-shadow:0 6px 20px -10px rgba(107,106,49,.4)}
+.btn:hover .arrow{transform:translateX(3px);opacity:1}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn.primary{
+  min-height:68px;font-size:18px;background:var(--accent);color:var(--accent-ink);border-color:var(--accent);
+}
+.btn.primary:hover{box-shadow:0 10px 26px -10px var(--accent)}
+.btn.primary .arrow{opacity:.85}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row .btn{padding:0 16px;gap:10px;font-size:16px}
+.row .btn span{flex:1}
+.wide{margin-top:0}
+@media (max-width:360px){.row{grid-template-columns:1fr}}
+@media (min-width:720px){
+  main{max-width:480px;padding-top:56px;padding-bottom:56px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .rise{opacity:0;transform:translateY(10px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.12s}.d3{animation-delay:.2s}.d4{animation-delay:.3s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow rise"><i></i>Hello, I'm</p>
+  <h1 class="rise d1">Rana Ibrahim</h1>
+  <p class="role rise d1">UI/UX Designer</p>
+  <ul class="meta rise d2">
+    <li>Information Technology Engineering</li>
+    <li>Syrian Virtual University</li>
+    <li>2nd Year</li>
+  </ul>
+  <p class="quote rise d2">“I’m an IT Engineering student focused on UI/UX and product design.”</p>
+
+  <nav class="links rise d3" aria-label="Links">
+    <a class="btn primary" id="behance" href="https://www.behance.net/ranaibrahim2233" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg>
+      <span>View My Work</span>
+      <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+    </a>
+    <a class="btn" id="cv" href="https://drive.google.com/file/d/1BYf6DuG7EV_MuX3rHD_v7vm34y7b320B/view?usp=drivesdk" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+      <span>Download CV</span>
+      <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+    </a>
+    <div class="row">
+      <a class="btn" id="linkedin" href="https://www.linkedin.com/in/ranaibrahim296?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13c0-1.5 1-2 2-2s2 .8 2 2.2V16"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a class="btn" id="email" href="mailto:rana29ibra6@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>
+        <span>Email Me</span>
+      </a>
+    </div>
+  </nav>
+</main>
+</body>
+</html>
